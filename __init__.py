@@ -48,7 +48,7 @@ class Escort(object):
     c.load(self.cookie)
     
     new_cookies = c.output().replace("Set-Cookie: ", "").replace('\r\n', '; ')
-    headers['Cookie'] new_cookies
+    headers['Cookie'] = new_cookies
     kwds['headers'] = headers
 
     resp = urlfetch.fetch(*args, **kwds)
