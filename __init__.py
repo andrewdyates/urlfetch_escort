@@ -54,10 +54,10 @@ class Escort(object):
     resp = urlfetch.fetch(*args, **kwds)
     
     # if unauthorized, try re-authorizing. If that fails, raise an exception.
-    if self._is_unauth(resp):
-      self._auth()
+    if self.is_unauth(resp):
+      self.auth()
       resp = urlfetch.fetch(*args, **kwds)
-      if self._is_unauth(resp):
+      if self.is_unauth(resp):
         raise IOError("Cannot authenticate HTTP request. %s" % mgs(resp))
     
     return resp
