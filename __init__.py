@@ -13,15 +13,12 @@ domain authentication escort child object.
 See:
   http://code.google.com/appengine/docs/python/urlfetch/
 """
-__authors__ = ['"Andrew D. Yates" <andrew.yates@hhdocs.com>']
-
 
 import Cookie
 import re
 import urllib
 
 from google.appengine.api import urlfetch
-
 
 
 class Escort(object):
